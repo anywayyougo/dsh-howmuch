@@ -1,0 +1,40 @@
+{
+    "name": "dsh-howmuch",
+    "version": "1.0.0",
+    "description": "极简透明悬浮框",
+    "type": "module",
+    "main": "./lib/host/index.mjs",
+    "files": [
+        "lib",
+        "cordis.patch.yml"
+    ],
+    "dsh": {
+        "bundle": {
+            "patch": "./cordis.patch.yml"
+        },
+        "client": {
+            "platform": "web",
+            "inject": [
+                "@deepseek-ai/dsh-api-remotes",
+                "@deepseek-ai/dsh-client-ui-layout",
+                "@deepseek-ai/dsh-client-ui-settings"
+            ]
+        }
+    },
+    "exports": {
+        ".": "./lib/host/index.mjs",
+        "./client": "./lib/client/index.cjs"
+    },
+    "scripts": {
+        "build": "tsdown"
+    },
+    "dependencies": {
+        "@deepseek-ai/schemastery": "3.18.5"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.0",
+        "@types/react-dom": "^18.0.0",
+        "tsdown": "^0.22.0",
+        "typescript": "^5.0.0"
+    }
+}
